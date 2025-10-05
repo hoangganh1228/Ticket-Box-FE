@@ -39,14 +39,14 @@
   color: #2dc275;
 }
 
-:global(.swiper-pagination-bullet) {
+.bannerSwiper :global(.swiper-pagination-bullet) {
   width: 8px;
   height: 8px;
   background: #fff; /* màu trắng cho chấm thường */
   opacity: 1;       /* đảm bảo không bị mờ */
 }
 
-:global(.swiper-pagination-bullet-active) {
+.bannerSwiper :global(.swiper-pagination-bullet-active) {
   background: #2dc275; /* màu xanh khi active */
 }
 
