@@ -14,21 +14,19 @@ import {
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
-interface SearchPageProps {
-  searchParams: { q?: string; cate?: string, from?: string, to?: string };
-}
+export default async function Search({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string; cate?: string; from?: string; to?: string }>;
+}) {
+  const { q, cate, from, to } = await searchParams;
 
-export default async function Search({ searchParams }: SearchPageProps) {
-  
-  const { q , cate, from, to } = searchParams;
-
-  if(!q && !cate && !from && !to) {
+  if (!q && !cate && !from && !to) {
     redirect('/');
   }
 
   const res = await searchWorkshops({ q, cate, from, to });
-  
-  console.log('res',res);
+  console.log('res', res);
   
   return (
     <main className="bg-black min-h-screen ">
