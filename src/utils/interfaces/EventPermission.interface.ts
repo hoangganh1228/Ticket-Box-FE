@@ -6,5 +6,4 @@ export interface PermissionRoleEvent {
     updated_at: string;
 }
 
-export interface eventRole extends PermissionRoleEvent {
-}
+export type eventRole = PermissionRoleEvent;
