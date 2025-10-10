@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
-import RichTextEditor from "@/src/components/RichTextEditor";
 import ImageUpload from "./components/ImageUpload";
 import useVietnamAddress from "@/src/hooks/useVietnamAddress";
 
@@ -496,12 +495,12 @@ export default function EnhancedEventForm({
           Thông tin sự kiện <span className="text-red-500">*</span>
         </h3>
         <div className={`border rounded-lg bg-white ${getBorderClass('description', 'border-gray-600')}`}>
-          <RichTextEditor
+          <textarea
             value={description}
-            onChange={(value) => handleFieldChange('description', value, setDescription)}
+            onChange={(e) => handleFieldChange('description', e.target.value, setDescription)}
             placeholder="Tóm tắt, chi tiết chương trình, khách mời, trải nghiệm đặc biệt, điều khoản…"
+            className="w-full p-2 border rounded-md h-40 resize-none"
           />
-        </div>
         <ErrorMessage error={localErrors.description} />
       </div>
 
