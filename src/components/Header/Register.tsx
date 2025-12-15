@@ -126,14 +126,14 @@ export default function Register({
 
             <div className="text-center text-sm text-gray-500">Hoặc</div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 text-black">
               {/* Email input */}
               <div className="relative">
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:border-[#2dc275] bg-gray-50"
+                  className="w-full px-4 py-3 border border-gray-200 text-black rounded-lg focus:outline-none focus:border-[#2dc275] bg-gray-50"
                   placeholder="Nhập email của bạn"
                 />
               </div>

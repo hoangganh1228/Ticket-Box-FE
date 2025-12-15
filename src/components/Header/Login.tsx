@@ -95,7 +95,7 @@ export default function Login({
 
           {/* Form section */}
           <div className="flex flex-col gap-4 pt-6 px-6 pb-6 bg-white rounded-b-xl">
-            <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+            <form className="flex flex-col gap-4 text-black" onSubmit={handleSubmit}>
               {/* Email input */}
               <div className="relative">
                 <input

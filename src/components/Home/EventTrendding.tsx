@@ -24,25 +24,32 @@ export default function TrendingEventsSection({
           top: 50% !important;
           transform: translateY(10%);
           color: white;
-          width: 32px;
-          height: 32px;
+          width: 40px;
+          height: 40px;
           z-index: 10;
           background-color: rgba(0, 0, 0, 0.5);
-          border-radius: 0px 4px 4px 0px;
+          
+         
         }
-
+.swiper-button-prev{
+ border-radius: 0px 8px 8px 0px;
+}
+ .swiper-button-next{
+ border-radius: 8px 0px 0px 8px;
+}
         .swiper-button-prev {
-          left: 2px;
+          left: 0px;
         }
 
         .swiper-button-next {
-          right: 2px;
+          right: 0px;
         }
 
         .swiper-button-prev::after,
         .swiper-button-next::after {
           font-size: 18px;
         }
+       
 
         .swiper-slide {
           height: auto;
@@ -58,9 +65,10 @@ export default function TrendingEventsSection({
       ) : (
         <Swiper
           modules={[Navigation, Pagination]}
-          spaceBetween={16}
+          spaceBetween={30}
           slidesPerView={1.2}
           navigation
+          className="px-12"
           slidesPerGroup={4} //next 4 items
           breakpoints={{
             480: {
@@ -79,19 +87,15 @@ export default function TrendingEventsSection({
               slidesPerView: 3.7,
             },
           }}
-          className=""
+          
         >
           {events?.length > 0 ? (
             events?.map((event, index) => (
               <SwiperSlide key={index}>
-                <div className="h-full transition-transform duration-300 cursor-pointer hover:scale-105">
-                  <Link
-                    className="relative aspect-[16/9] overflow-hidden rounded-xl"
-                    href={event?.deeplink}
-                  >
-                    <div className="absolute top-4 left-4 z-10">
+                <div className=" flex items-end gap-2 h-full transition-transform duration-300 cursor-pointer overflow-hidden ">
+                  <div className="  ">
                       <span
-                        className="text-6xl font-black text-green-400 opacity-90"
+                        className="text-6xl font-black text-green-400 opacity-90 "
                         style={{
                           fontFamily: 'system-ui, -apple-system, sans-serif',
                           textShadow: '2px 2px 4px rgba(0,0,0,0.8)',
@@ -102,13 +106,19 @@ export default function TrendingEventsSection({
                       </span>
                     </div>
 
+                  <Link
+                    className="aspect-[16/9] relative rounded-xl "
+                    href={event?.deeplink}
+                  >
+                    
                     {/* Gradient overlay cho text dễ đọc */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-[1]"></div>
-
+                    <div className="absolute inset-0 bg-transparent from-black/60 via-transparent to-transparent z-[5] "></div>
+                     
                     <img
                       src={event.imageUrl}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover block rounded-xl"
                     />
+                    
                   </Link>
                 </div>
               </SwiperSlide>

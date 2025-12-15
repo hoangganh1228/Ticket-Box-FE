@@ -123,7 +123,7 @@ export default function Main() {
               className={styles.bannerSwiper}
             >
               {bannerEvents?.length > 0 ? (
-                bannerEvents.map((item, index) => (
+                bannerEvents.map((item:any, index) => (
                   <SwiperSlide key={index}>
                     <div className="relative rounded-xl overflow-hidden h-[320px] shadow-lg group">
                       {/* Thumbnail hiển thị mặc định */}
@@ -183,12 +183,13 @@ export default function Main() {
           ) : specialEvents?.events?.length > 0 ? (
             <Swiper
               cssMode={true}
-              spaceBetween={12}
+              spaceBetween={30}
+                  slidesPerView={1.2}
               slidesPerGroup={4}
               breakpoints={{
                 640: { slidesPerView: 2.7, spaceBetween: 12 },
                 1024: { slidesPerView: 3.7, spaceBetween: 8 },
-                1280: { slidesPerView: 4.7, spaceBetween: 12 },
+                1280: { slidesPerView: 4.7, spaceBetween: 1 },
               }}
               loop={false}
               onSlideChange={(swiper) => {
@@ -203,7 +204,7 @@ export default function Main() {
               modules={[Navigation, Mousewheel, Keyboard]}
               className={styles.SpecialEvent}
             >
-              {specialEvents?.events?.map((event, index) => (
+              {specialEvents?.events?.map((event:any, index:any) => (
                 <SwiperSlide key={index}>
                   <div className="rounded-lg overflow-hidden shadow-lg h-[240px] md:h-[300px] lg:h-[320px] lg:w-[250px]">
                     <Link
@@ -223,14 +224,14 @@ export default function Main() {
 
               {/* Custom Navigation buttons */}
               <div
-                className={`${styles.prevBtnSpecialEvent} transition-opacity ${atBeginning ? 'opacity-0 pointer-events-none' : 'opacity-100'
-                  }`}
+                className={`${styles.prevBtnSpecialEvent} transition-opacity left-0 z-10 w-[40px] h-[40px] rounded-[0px_8px_8px_0px] hover:bg-black
+                  `}
               >
                 <LeftOutlined />
               </div>
               <div
-                className={`${styles.nextBtnSpecialEvent} transition-opacity ${atEnd ? 'opacity-0 pointer-events-none' : 'opacity-100'
-                  }`}
+                className={`${styles.nextBtnSpecialEvent} transition-opacity right-0 z-10 w-[40px] h-[40px] rounded-[8px_0px_0px_8px] hover:bg-black
+                  `}
               >
                 <RightOutlined />
               </div>

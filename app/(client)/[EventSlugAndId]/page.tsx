@@ -178,7 +178,7 @@ export default function EventDetailPage() {
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="flex flex-wrap">
             <div className="w-3/4 pr-3">
-              <div className="bg-white rounded-xl px-4">
+              <div className="bg-gray-900 rounded-xl px-4">
                 <h4
                   className="pt-4 pb-4 border-b border-[rgb(235,235,240)]"
                   ref={introRef}
@@ -220,7 +220,7 @@ export default function EventDetailPage() {
               </div>
 
               {/* ticket-infomation */}
-              <div className="mt-[25px] bg-[rgb(39,39,42)] rounded-xl overflow-hidden text-white"
+              <div className="mt-[25px] bg-gray-900 rounded-xl overflow-hidden text-white"
                 ref={ticketSectionRef}
               >
                 <h4 className="px-3 py-2 border-b border-[rgb(238,233,233)]">
@@ -228,12 +228,12 @@ export default function EventDetailPage() {
                 </h4>
 
                 { eventDetail &&
-                <Collapse
+                <Collapse 
                   bordered={false}
                   expandIcon={({ isActive }) => (
                     <div
                       style={{ height: 30, width: 30 }}
-                      className="flex items-center justify-center"
+                      className="flex items-center justify-center "
                     >
                       <CaretRightOutlined
                         rotate={isActive ? 90 : 0}
@@ -241,11 +241,11 @@ export default function EventDetailPage() {
                       />
                     </div>
                   )}
-                  className="bg-[rgb(39,39,42)]"
+                
                   items={eventDetail?.shows.map((show, idx) => ({
                     key: show.id.toString(),
                     label: (
-                      <div className="flex justify-between items-center w-full text-white">
+                      <div className="flex justify-between items-center w-full text-white ">
                         <span className="text-xs">
                           <ShowTime show={show} />
                         </span>
@@ -281,8 +281,8 @@ export default function EventDetailPage() {
               </div>
 
               {/* orgnaizer-info */}
-              <div className="rounded-xl mt-[25px] pr-4 pl-4 bg-[rgb(255,255,255)] overflow-hidden]">
-                <h4 className="pt-3 pb-3 border-b border-[rgb(235,235,240)]">
+              <div className="rounded-xl mt-[25px] pr-4 pl-4 bg-gray-900 overflow-hidden]">
+                <h4 className="pt-3 pb-3  border-b border-[rgb(235,235,240)]">
                   Ban Tổ Chức
                 </h4>
                 <div className="pt-3 pb-3 mt-[24px]">
@@ -295,10 +295,10 @@ export default function EventDetailPage() {
                       />
                     </div>
                     <div className="">
-                      <p className="font-bold text-base leading-[150%]">
+                      <p className="font-bold text-base  leading-[150%]">
                         {eventDetail?.org_name}
                       </p>
-                      <div className="font-normal text-sm leading-6 break-normal whitespace-pre-line">
+                      <div className="font-normal   text-sm leading-6 break-normal whitespace-pre-line">
                         {eventDetail?.org_description}
                       </div>
                     </div>
